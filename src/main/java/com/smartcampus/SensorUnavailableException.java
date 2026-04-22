@@ -1,0 +1,13 @@
+package com.smartcampus;
+
+public class SensorUnavailableException extends RuntimeException {
+
+    private final String sensorId;
+
+    public SensorUnavailableException(String sensorId) {
+        super("Sensor '" + sensorId + "' is in MAINTENANCE and cannot accept readings.");
+        this.sensorId = sensorId;
+    }
+
+    public String getSensorId() { return sensorId; }
+}
