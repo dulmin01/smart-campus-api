@@ -1,5 +1,9 @@
-package com.smartcampus;
+package com.smartcampus.resource;
 
+import com.smartcampus.DataStore;
+import com.smartcampus.exception.SensorUnavailableException;
+import com.smartcampus.model.SensorReading;
+import com.smartcampus.model.Sensor;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;

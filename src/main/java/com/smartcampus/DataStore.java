@@ -1,5 +1,8 @@
 package com.smartcampus;
 
+import com.smartcampus.model.SensorReading;
+import com.smartcampus.model.Sensor;
+import com.smartcampus.model.Room;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

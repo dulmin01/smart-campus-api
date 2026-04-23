@@ -1,4 +1,4 @@
-package com.smartcampus;
+package com.smartcampus.filter;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;

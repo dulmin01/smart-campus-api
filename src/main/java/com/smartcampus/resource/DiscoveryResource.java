@@ -1,4 +1,4 @@
-package com.smartcampus;
+package com.smartcampus.resource;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -25,7 +25,7 @@ public class DiscoveryResource {
         metadata.put("version", "v1.0");
 
         // 2. Administrative contact details
-        metadata.put("Dulmin Fernando", "20240383");
+        metadata.put("Author;", "Dulmin Fernando, 20240383");
 
         // 3. A map of primary resource collections
         Map<String, String> endpoints = new LinkedHashMap<>();
