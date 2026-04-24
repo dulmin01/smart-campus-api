@@ -99,13 +99,13 @@ curl -X GET http://localhost:8080/smart-campus-api/api/v1
 
 ### 2. Create a Room
 ```
-curl -X POST http://localhost:8080/smart-campus-api/api/v1/rooms
-  -H "Content-Type: application/json"
-  -d "{
-    \"id\":\"LIB-301\",
-    \"name\":\"Library Quiet Study\",
-    \"capacity\":50
-  }"
+curl -X POST http://localhost:8080/smart-campus-api/api/v1/rooms \
+  -H "Content-Type: application/json" \
+  -d '{
+    "id":"LIB-301",
+    "name":"Library Quiet Study",
+    "capacity":50
+  }'
 ```
 
 ### 3. Get All Rooms
@@ -115,15 +115,15 @@ curl -X GET http://localhost:8080/smart-campus-api/api/v1/rooms
 
 ### 4. Register a Sensor
 ```
-curl -X POST http://localhost:8080/smart-campus-api/api/v1/sensors
-  -H "Content-Type: application/json"
-  -d "{
-    \"id\":\"CO2-001\",
-    \"type\":\"CO2\",
-    \"status\":\"ACTIVE\",
-    \"currentValue\":0.0,
-    \"roomId\":\"LIB-301\"
-  }"
+curl -X POST http://localhost:8080/smart-campus-api/api/v1/sensors \
+  -H "Content-Type: application/json" \
+  -d '{
+    "id":"CO2-001",
+    "type":"CO2",
+    "status":"ACTIVE",
+    "currentValue":0.0,
+    "roomId":"LIB-301"
+  }'
 ```
 
 ### 5. Filter Sensors by Type
@@ -133,11 +133,11 @@ curl -X GET "http://localhost:8080/smart-campus-api/api/v1/sensors?type=CO2"
 
 ### 6. Add a Sensor Reading
 ```
-curl -X POST http://localhost:8080/smart-campus-api/api/v1/sensors/CO2-001/readings
-  -H "Content-Type: application/json"
-  -d "{
-    \"value\":412.5
-  }"
+curl -X POST http://localhost:8080/smart-campus-api/api/v1/sensors/CO2-001/readings \
+  -H "Content-Type: application/json" \
+  -d '{
+    "value":412.5
+  }'
 ```
 
 ### 7. Get All Readings for a Sensor
@@ -152,22 +152,22 @@ curl -X DELETE http://localhost:8080/smart-campus-api/api/v1/rooms/LIB-301
 
 ### 9. Register Sensor with Invalid Room (422 Error)
 ```
-curl -X POST http://localhost:8080/smart-campus-api/api/v1/sensors
-  -H "Content-Type: application/json"
-  -d "{
-    \"id\":\"CO2-002\",
-    \"type\":\"CO2\",
-    \"status\":\"ACTIVE\",
-    \"currentValue\":0.0,
-    \"roomId\":\"FAKE-ROOM\"
-  }"
+curl -X POST http://localhost:8080/smart-campus-api/api/v1/sensors \
+  -H "Content-Type: application/json" \
+  -d '{
+    "id":"CO2-002",
+    "type":"CO2",
+    "status":"ACTIVE",
+    "currentValue":0.0,
+    "roomId":"FAKE-ROOM"
+  }'
 ```
 
 ### 10. Post Reading to MAINTENANCE Sensor (403 Error)
 ```
-curl -X POST http://localhost:8080/smart-campus-api/api/v1/sensors/CO2-003/readings
-  -H "Content-Type: application/json"
-  -d "{
-  \"value\":500.0
-  }"
+curl -X POST http://localhost:8080/smart-campus-api/api/v1/sensors/CO2-003/readings \
+  -H "Content-Type: application/json" \
+  -d '{
+    "value":500.0
+  }'
 ```
