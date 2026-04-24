@@ -43,10 +43,10 @@ public class SensorResource {
             sensor.setStatus("ACTIVE");
         }
         DataStore.sensors.put(sensor.getId(), sensor);
-        // Keep room's sensorIds in sync
+        
         DataStore.rooms.get(sensor.getRoomId()).getSensorIds().add(sensor.getId());
 
-        URI location = URI.create("http://localhost:8080/api/v1/sensors/" + sensor.getId());
+        URI location = URI.create("http://localhost:8080/smart-campus-api/api/v1/sensors/" + sensor.getId());
         return Response.created(location).entity(sensor).build();
     }
 

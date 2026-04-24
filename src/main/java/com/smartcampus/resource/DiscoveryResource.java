@@ -25,7 +25,7 @@ public class DiscoveryResource {
         metadata.put("version", "v1.0");
 
         // 2. Administrative contact details
-        metadata.put("Author;", "Dulmin Fernando, 20240383");
+        metadata.put("Contact;", "Dulmin Fernando, 20240383");
 
         // 3. A map of primary resource collections
         Map<String, String> endpoints = new LinkedHashMap<>();
@@ -33,8 +33,8 @@ public class DiscoveryResource {
         endpoints.put("sensors", "/api/v1/sensors");
 
         metadata.put("resources", endpoints);
-
-        // Return an HTTP 200 OK response with the JSON body
+        
+        
         return Response.ok(metadata).build();
     }
 }

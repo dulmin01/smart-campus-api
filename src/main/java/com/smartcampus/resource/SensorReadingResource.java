@@ -47,17 +47,17 @@ public class SensorReadingResource {
             throw new SensorUnavailableException(sensorId);
         }
         
-        // Auto-generate id and timestamp if not provided
+        
         if (reading.getId() == null || reading.getId().isBlank()) {
             reading.setId(UUID.randomUUID().toString());
         }
         if (reading.getTimestamp() == 0) {
             reading.setTimestamp(System.currentTimeMillis());
         }
-        // Persist reading
+        
         DataStore.getReadingsForSensor(sensorId).add(reading);
 
-        // Side effect: update parent sensor's currentValue
+        
         sensor.setCurrentValue(reading.getValue());
 
         return Response.status(Response.Status.CREATED).entity(reading).build();

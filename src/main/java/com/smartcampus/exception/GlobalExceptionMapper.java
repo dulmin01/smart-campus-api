@@ -20,7 +20,7 @@ public class GlobalExceptionMapper implements ExceptionMapper<Throwable> {
         // Log full details server-side for developers
         LOGGER.log(Level.SEVERE, "Unhandled exception caught by global mapper", ex);
 
-        // Return safe generic response - never expose stack trace to client
+        // Return safe generic response 
         Map<String, Object> body = new HashMap<>();
         body.put("status", 500);
         body.put("error", "Internal Server Error");

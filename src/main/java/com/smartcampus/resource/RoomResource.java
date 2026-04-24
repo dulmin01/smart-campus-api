@@ -39,7 +39,7 @@ public class RoomResource {
                     .build();
         }
         DataStore.rooms.put(room.getId(), room);
-        URI location = URI.create("http://localhost:8080/api/v1/rooms/" + room.getId());
+        URI location = URI.create("http://localhost:8080/smart-campus-api/api/v1/rooms/" + room.getId());
         return Response.created(location).entity(room).build();
     }
 
